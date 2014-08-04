@@ -10,7 +10,6 @@ var app = (function(app){
 
     document.body.appendChild( stats.domElement );
 
-
     var WIDTH = document.body.clientWidth;
     var HEIGHT = Math.max( window.innerHeight, document.body.clientHeight );
 
@@ -45,21 +44,16 @@ var app = (function(app){
         logo.mouseout = onMouseOut;
         logo.mousedown = onMouseDown;
 
-
-
         logo.position.x = Math.random()*WIDTH;
         logo.position.y = Math.random()*HEIGHT;
-
 
         stage.addChild(logo);
 
     }
 
-
     function onMouseOver( e ) {
 
         e.target.scale.x = e.target.scale.y = 1.3;
-
     }
 
     function onMouseOut(e ) {
@@ -77,22 +71,11 @@ var app = (function(app){
     var step = 0;
     var speed = 0.01;
 
-
-
-
     function animate() {
 
         stats.begin();
 
         requestAnimFrame( animate );
-
-       /* for (var i = 0; i < logos.length; i++)  {
-
-            var logo = logos[i];
-
-            logo.scale.x = logo.scale.y = ( Math.sin( steps[i]++*speed ) +1 ) /2 * maxScale;
-
-        }*/
 
         renderer.render(stage);
 
