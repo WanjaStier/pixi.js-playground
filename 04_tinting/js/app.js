@@ -17,6 +17,8 @@ var app = (function(app){
 
     var texture = PIXI.Texture.fromImage("../_assets/akqa_logo_white.png");
 
+
+
     for (var i = 0; i < amount; i++)  {
 
         var logo = new PIXI.Sprite(texture)//, {x:0, y:0, width:26, height:37});
@@ -38,12 +40,10 @@ var app = (function(app){
 
     requestAnimFrame( animate );
 
-    var maxScale = 1;
-    var step = 0;
-    var speed = 0.05;
-
-
-    var steps = [];
+    var maxScale    = 1;
+    var step        = 0;
+    var speed       = 0.05;
+    var steps       = [];
 
     for (var i = 0; i < logos.length; i++)  {
         steps.push( Math.ceil(Math.random()*250));
