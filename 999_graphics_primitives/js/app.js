@@ -26,14 +26,24 @@ var app = (function(app){
     var circle = new PIXI.Graphics();
 
     stage.addChild(circle);
-    circle.anchor.x = circle.anchor.y = .5;
-
 
     //draw a circle
-    circle.beginFill(0xff00ff,.5);
-    circle.drawCircle(470, 200,100);
+    circle.beginFill(0xff00ff);
+    circle.drawCircle(0, 0,100);
     circle.endFill();
 
+    circle.x = circle.y = 300;
+
+
+    //drawing multiple primitives into a Graphics object
+    var graphics = new PIXI.Graphics();
+        graphics.beginFill(0xffff00);
+        graphics.drawRect(400,100,100,100);
+        graphics.beginFill(0x336699);
+        graphics.drawEllipse(200,200,100,50);
+        graphics.endFill();
+
+    stage.addChild( graphics );
 
     requestAnimFrame( animate );
 
